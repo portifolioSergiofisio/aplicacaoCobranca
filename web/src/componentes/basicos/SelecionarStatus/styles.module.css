@@ -1,0 +1,45 @@
+.selecionarInput {
+    width: 100%;
+    height: 132px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.divStatusRadio {
+    display: flex;
+
+    width: 263px;
+    height: 48px;
+
+    background: #f0f0f5;
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+.divStatusRadio span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.radioStatus {
+    width: 50px;
+    height: 100%;
+    appearance: none;
+}
+
+.statusChecado {
+    background-image: url('../../../assets/checkbox-status.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.statusNaoChecado {
+    background-image: url('../../../assets/checkbox-status-sinza.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}

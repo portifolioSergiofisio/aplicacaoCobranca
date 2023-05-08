@@ -1,0 +1,296 @@
+.DadosCliente {
+  width: 1115px;
+}
+
+.nomeDoCliente {
+  display: flex;
+  margin-bottom: 24px;
+
+  width: 100%;
+}
+
+.containerDetalhesCliente {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: var(--branco);
+  border-radius: 30px;
+
+  padding: 30px 24px;
+}
+
+.cabecalhoCobranca > .item1 {
+  cursor: pointer;
+}
+
+.primeiraDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 1074.37px;
+  height: 23%;
+}
+
+.h2NomeCliente {
+  height: 34px;
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 130%;
+
+  display: flex;
+  align-items: center;
+
+  color: #3f3f55;
+}
+
+.h2Titulo {
+  width: 159px;
+  height: 23px;
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 130%;
+
+  display: flex;
+  align-items: center;
+
+  color: var(--cinza-escuro);
+}
+
+.segundaDiv {
+  width: 100%;
+  height: 100%;
+}
+
+.divDadosSuperior,
+.divDadosInferior {
+  display: flex;
+  justify-content: space-between;
+}
+
+.divDadosSuperior {
+  margin-top: 24px;
+}
+
+.divDadosInferior {
+  margin-top: 50px;
+}
+
+.spanDadosCliente,
+.pDadosCliente {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #3f3f55;
+}
+
+.pDadosCliente {
+  font-weight: 400;
+}
+
+.primeiroDado {
+  width: 250px;
+}
+
+.segundoDado {
+  width: 130px;
+}
+
+.terceiroDado {
+  width: 120px;
+}
+
+.quartoDado {
+  width: 100px;
+}
+
+.quintoDado {
+  width: 100px;
+}
+
+.sextoDado {
+  width: 30px;
+}
+
+.dadosCobrancaCliente {
+  width: 1115px;
+  height: 350px;
+  background: #ffffff;
+  border-radius: 30px;
+
+  margin-top: 24px;
+  padding: 25px 20px;
+}
+
+.dadosCobrancaCliente {
+  display: flex;
+  flex-direction: column;
+}
+
+.cabecalhoCobranca {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cabecalhoCobranca > h2 {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 130%;
+  color: #3f3f55;
+}
+
+.btnCadastroCobranca {
+  width: 252px;
+}
+
+.btnCadastroCobranca::before {
+  content: '+';
+  margin-right: 6px;
+}
+
+.dadosTodasCobrancas {
+  height: 250px;
+  margin-top: 23px;
+}
+
+.itemCabecalhoCobranca {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.dadosTodasCobrancas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.corpoTabelaDetalhesCobranca {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.itensCorpo {
+  display: flex;
+  align-items: center;
+}
+
+.itemCabecalhoCobranca > img {
+  height: 22px;
+}
+
+.itemCabecalhoCobranca > h2 {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 50px;
+
+  letter-spacing: 0.005em;
+
+  color: #3f3f55;
+}
+
+.itemCorpoCobranca > h3 {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 40px;
+  letter-spacing: 0.005em;
+  color: #6e6e85;
+
+  margin: 8px 0;
+}
+
+.item1 {
+  width: 160px;
+}
+.item2 {
+  width: 180px;
+}
+.item3 {
+  width: 125px;
+}
+.item4 {
+  width: 125px;
+}
+.item5 {
+  width: 345px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item6 {
+  display: flex;
+  justify-content: space-around;
+  width: 90px;
+}
+
+.item6 > img {
+  width: 22px;
+  cursor: pointer;
+}
+
+.invert {
+  rotate: 180deg;
+}
+
+.paginacao {
+  display: flex;
+  justify-content: center;
+}
+
+.paginacao > h2 {
+  text-align: center;
+  width: 30px;
+}
+
+.paga,
+.vencida,
+.pendente {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 77px;
+  height: 19px;
+
+  border-radius: 8px;
+
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+
+  text-transform: capitalize;
+}
+
+.vencida {
+  background: #ffefef;
+  color: #971d1d;
+}
+
+.pendente {
+  background: #fcf6dc;
+  color: #c5a605;
+}
+
+.paga {
+  background: #eef6f6;
+  color: #1fa7af;
+}

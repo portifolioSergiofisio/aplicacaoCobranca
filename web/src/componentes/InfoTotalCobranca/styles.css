@@ -1,0 +1,49 @@
+.infoCobranca {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 23px 40px;
+  gap: 10px;
+
+  width: 360px;
+  height: 111px;
+
+  border-radius: 30px;
+
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+
+  color: var(--cinza-escuro);
+}
+
+.infoCobranca div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  height: 100%;
+  width: 100%;
+}
+
+.texto {
+  font-size: 18px;
+}
+
+.valor {
+  font-size: 24px;
+}
+
+.pagas {
+  background: var(--cinza-azulado);
+}
+
+.vencidas {
+  background: var(--branco-rosado);
+}
+
+.previstas {
+  background: var(--bege-claro);
+}

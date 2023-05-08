@@ -1,0 +1,236 @@
+.paginaCobranca {
+  display: flex;
+  flex-direction: column;
+  width: 1150px;
+  height: calc(100% - 140px);
+  margin: 30px 0;
+}
+
+.cabecalhoPaginaCobranca {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 45px;
+
+  margin-top: 22px;
+}
+
+#modal-root {
+  cursor: pointer;
+}
+
+.divEsquerda,
+.divDireita {
+  display: flex;
+  align-items: center;
+}
+
+.divEsquerda > img {
+  width: 32px;
+  height: 32px;
+}
+
+.divDireita > img {
+  margin-right: 16px;
+}
+
+.h2Cobranca {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 130%;
+
+  display: flex;
+  align-items: center;
+
+  color: #3f3f55;
+
+  margin-left: 23px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.corpoCobranca {
+  margin-top: 30px;
+  width: 100%;
+  height: 85%;
+  background: #ffffff;
+  border-radius: 30px;
+  padding: 12px 23px;
+}
+
+.cabecalhoTabelaCobranca,
+.corpoTabelaCobranca {
+  display: flex;
+  align-items: center;
+}
+
+.corpoTabelaCobranca {
+  flex-direction: column;
+  width: 100%;
+  height: 90%;
+  overflow-y: auto;
+}
+
+.corpoTabelaCobranca > div {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 56px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.itemCabecalhoCobranca {
+  display: flex;
+  align-items: center;
+}
+
+.itemCabecalhoCobranca > img {
+  margin-right: 10px;
+}
+
+.itemCabecalhoCobranca > h2 {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 50px;
+  letter-spacing: 0.005em;
+  color: #3f3f55;
+}
+
+.itemCorpoCobranca > h3 {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 40px;
+
+  letter-spacing: 0.005em;
+
+  color: #6e6e85;
+}
+
+.item1Cobranca {
+  width: 160px;
+}
+
+.item2Cobranca {
+  width: 160px;
+}
+
+.item3Cobranca {
+  width: 123px;
+}
+
+.item4Cobranca {
+  width: 174px;
+}
+
+.item5Cobranca {
+  width: 122px;
+}
+
+.item6Cobranca {
+  width: 216px;
+}
+
+.item6Cobranca > h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item7Cobranca {
+  display: flex;
+  justify-content: space-around;
+  width: 80px;
+}
+
+.item7Cobranca > img {
+  cursor: pointer;
+}
+
+.item1Cobranca h2,
+.item2Cobranca h2,
+.item3Cobranca h2,
+.item4Cobranca h2,
+.item6Cobranca h2 {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 40px;
+
+  letter-spacing: 0.005em;
+
+  color: #747488;
+}
+
+.cabecalhoTabelaCobranca > .item1Cobranca,
+.cabecalhoTabelaCobranca > .item2Cobranca {
+  cursor: pointer;
+}
+
+.inputPesquisaClientes {
+  display: flex;
+  align-items: center;
+  width: 320px;
+  height: 45px;
+
+  background: #ffffff;
+  border-radius: 10px;
+
+  padding: 8px;
+}
+
+.inputPesquisaClientes > input {
+  width: 90%;
+  height: 100%;
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  color: #747488;
+  border: none;
+}
+
+.paga,
+.vencida,
+.pendente {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 77px;
+  height: 19px;
+
+  border-radius: 8px;
+
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+
+  text-transform: capitalize;
+}
+
+.vencida {
+  background: #ffefef;
+  color: #971d1d;
+}
+
+.pendente {
+  background: #fcf6dc;
+  color: #c5a605;
+}
+
+.paga {
+  background: #eef6f6;
+  color: #1fa7af;
+}

@@ -1,0 +1,136 @@
+.fecharUsuario {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+
+.fundoModalUsuario {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgb(0, 0, 0, 0.7);
+  z-index: 2;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalConteudoUsuario {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 491px;
+  height: 623px;
+  background: #ffffff;
+  border-radius: 30px;
+}
+
+.subModalConteudoUsuario {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 56px;
+}
+
+.subModalConteudoUsuario .iconeFechar {
+  height: 5%;
+  width: 5%;
+}
+
+.subModalConteudoUsuario h1 {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  color: var(--preto-azulado);
+}
+
+.formularioUsuario {
+  width: 100%;
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.divFormularioEditar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 80%;
+}
+
+.subDivEditar {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding: 0px;
+  gap: 6px;
+
+  width: 100%;
+  height: 70px;
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.subDivEditar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 100%;
+  height: 70px;
+}
+
+.subDivEditar input {
+  width: 100%;
+}
+
+.divFormularioEditar .botaoEditarCadastro {
+  margin-top: 20px;
+}
+
+.botaoEditarCadastro {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 40px;
+  gap: 4px;
+
+  width: 160px;
+  height: 33px;
+  left: calc(50% - 160px / 2 - 0.5px);
+  top: calc(50% - 33px / 2 - 0.5px);
+
+  background: var(--rosa-forte);
+  color: var(--cinza);
+  border-radius: 10px;
+  border: none;
+}
+
+.divBotao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.erro {
+  border: 3px solid #e70000;
+}

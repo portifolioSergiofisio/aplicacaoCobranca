@@ -1,0 +1,86 @@
+.fundoModalExcluirCobranca {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+
+  z-index: 2;
+}
+
+.modalExcluirCobranca {
+  width: 600px;
+  height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--branco);
+  border-radius: 30px;
+
+  filter: drop-shadow(0px 4px 42px rgba(0, 0, 0, 0.2));
+}
+
+.spanExcluirCobranca {
+  width: 439px;
+  height: 16.08px;
+  left: 555px;
+  top: 475.06px;
+  margin-top: 5px;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 130%;
+
+  color: #cc7800;
+}
+
+.divBotaoExluirCobranca {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+
+  gap: 8px;
+  margin-top: 25px;
+
+  width: 184px;
+  height: 32px;
+}
+
+.botaoNao,
+.botaoSim {
+  width: 88px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 4px;
+  border: none;
+
+  cursor: pointer;
+}
+
+.botaoNao {
+  color: #ae1100;
+
+  background: #f2d6d0;
+}
+
+.botaoSim {
+  background: #acd9c5;
+  color: #034a2a;
+}

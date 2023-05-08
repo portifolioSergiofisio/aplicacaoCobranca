@@ -1,0 +1,48 @@
+.containerClientes {
+  overflow-y: hidden;
+  height: calc(100% - 190px);
+  width: 1150px;
+  margin: 30px 0;
+  scrollbar-width: 0;
+}
+
+.cabecalhoInfoCliente {
+  display: flex;
+  align-items: center;
+}
+
+.corpo {
+  height: 100%;
+}
+
+.cabecalhoInfoCliente .h2Cliente {
+  width: 109px;
+  height: 34px;
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 130%;
+
+  display: flex;
+  align-items: center;
+
+  margin-left: 23px;
+
+  color: var(--cinza-escuro);
+}
+
+.botoesPesquisa {
+  display: flex;
+  align-items: center;
+}
+
+.botoesPesquisa > img {
+  margin: 0 16px;
+}
+
+.inputPesquisa {
+  width: 318px;
+  height: 39px;
+}

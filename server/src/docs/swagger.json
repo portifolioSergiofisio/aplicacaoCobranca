@@ -1,0 +1,887 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Swagger Server API - OpenAPI 3.0",
+    "description": "Este é um exemplo de como usar a API.\nUm desafio proposto pela [Cubos Academy](https://aulas.cubos.academy/) durante o curso de desevolvimento do software (DDS) da turma 09.\n\nAlgumas informações importantes:\n\n- Para autenticação, enviar o token JWT no formato Bearer [token]\n= As rotas /login e /cadastro não exigem autenticação\n- Todas as outras rotas exigem autenticação\n- O parâmetro id sempre deve ser um número inteiro positivo\n\nAlguns links úteis:\n- [Repositório](https://github.com/sergiofisio/server-cobranca)",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0.11"
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  },
+  "servers": [
+    {
+      "url": "https://cobranca.herokuapp.com"
+    }
+  ],
+  "contact": {
+    "name": "Equipe de Desenvolvimento",
+    "url": "https://github.com/sergiofisio",
+    "email": "contato@exemplo.com.br"
+  },
+  "tags": [
+    {
+      "name": "Login",
+      "description": "Autenticação do usuário"
+    },
+    {
+      "name": "Cadastro",
+      "description": "Cadastro de novos usuários"
+    },
+    {
+      "name": "Cliente",
+      "description": "Cadastro de novos clientes"
+    },
+    {
+      "name": "Usuário",
+      "description": "Gerenciamento do usuário"
+    }
+  ],
+  "paths": {
+    "/login": {
+      "post": {
+        "tags": [
+          "Login"
+        ],
+        "summary": "Login do usuário",
+        "description": "Faz o login do usuário",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "description": "Endereço de email do usuário"
+                  },
+                  "senha": {
+                    "type": "string",
+                    "description": "Senha do usuário"
+                  }
+                },
+                "example": {
+                  "email": "joao@example.com",
+                  "senha": "123456"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Usuário autenticado com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "usuario": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "nome": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "token": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "usuario": {
+                    "nome": "João",
+                    "email": "joao@example.com"
+                  },
+                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjc5NzI5MTE0LCJleHAiOjE2Nzk3NTc5MTR9.GB3oKlMD5bmI51ji3ubtzgYRGU3l1XgjbV9ycH1qvNU"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Credenciais inválidas",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "mensagem": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "mensagem": "Usuário e/ou senha inválido(s)."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cadastro": {
+      "post": {
+        "tags": [
+          "Cadastro"
+        ],
+        "summary": "Cria um usuário",
+        "description": "Essa é a rota que será utilizada para cadastrar um novo usuario.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "type": "string",
+                    "description": "Nome do usuário"
+                  },
+                  "email": {
+                    "type": "string",
+                    "format": "email",
+                    "description": "Endereço de email do usuário"
+                  },
+                  "senha": {
+                    "type": "string",
+                    "description": "Senha do usuário"
+                  },
+                  "cpf": {
+                    "type": "string",
+                    "description": "Cpf do usuário"
+                  },
+                  "telefone": {
+                    "type": "string",
+                    "description": "Telefone do usuário"
+                  }
+                },
+                "required": [
+                  "nome",
+                  "email",
+                  "senha"
+                ],
+                "example": {
+                  "nome": "João",
+                  "email": "joao@example.com",
+                  "senha": "senha123"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Usuário criado com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "nome": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    }
+                  },
+                  "example": {
+                    "id": 12,
+                    "nome": "João",
+                    "email": "joao@example.com"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/EmailUniqueError"
+          }
+        }
+      }
+    },
+    "/cliente": {
+      "get": {
+        "tags": [
+          "Cliente"
+        ],
+        "summary": "Lista de clientes",
+        "description": "Lista de clientes cadastrados",
+        "security": {
+          "= jwt": []
+        },
+        "responses": {
+          "200": {
+            "description": "Lista de clientes",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClienteCriado"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "419": {
+            "$ref": "#/components/responses/AuthenticationTimeout"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Cliente"
+        ],
+        "summary": "Novo cliente",
+        "description": "Cadastra novo cliente",
+        "security": {
+          "= jwt": []
+        },
+        "requestBody": {
+          "description": "Objeto com informações do cliente",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NovoCliente"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Cliente criado com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClienteCriado"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/DuplicidadeEmailCpfTelefone"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "419": {
+            "$ref": "#/components/responses/AuthenticationTimeout"
+          },
+          "422": {
+            "$ref": "#/components/responses/MissingParametersNameEmailCpfTelefone"
+          }
+        }
+      }
+    },
+    "/cliente/{id}": {
+      "get": {
+        "tags": [
+          "Cliente"
+        ],
+        "summary": "Lista um cliente",
+        "description": "Lista cliente pelo id",
+        "security": {
+          "= jwt": []
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "ID do cliente.",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Dados do cliente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClienteCriado"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/ClientNotFounded"
+          },
+          "419": {
+            "$ref": "#/components/responses/AuthenticationTimeout"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Cliente"
+        ],
+        "summary": "Lista um cliente",
+        "description": "Lista cliente pelo id",
+        "security": {
+          "= jwt": []
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "ID do cliente.",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Cliente atualizado com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClienteCriado"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/DuplicidadeEmailCpfTelefone"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/ClientNotFounded"
+          },
+          "419": {
+            "$ref": "#/components/responses/AuthenticationTimeout"
+          },
+          "422": {
+            "$ref": "#/components/responses/MissingParametersNameEmailCpfTelefone"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Cliente"
+        ],
+        "summary": "Deleta um cliente",
+        "description": "Deleta cliente pelo id",
+        "security": {
+          "= jwt": []
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "ID do cliente.",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Cliente deletado com sucesso"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/ClientNotFounded"
+          },
+          "419": {
+            "$ref": "#/components/responses/AuthenticationTimeout"
+          }
+        }
+      }
+    },
+    "/cliente/:id/status": {
+      "put": {
+        "tags": [
+          "Cliente"
+        ],
+        "summary": "Muda o estatus financeiro de um cliente",
+        "description": "Altera o estatus financeiro entre \"Em dia\" e \"Inadimplente\"",
+        "security": {
+          "= jwt": []
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "description": "ID do cliente.",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "integer",
+                    "description": "Estatus financeiro do cliente.",
+                    "enum": [
+                      1,
+                      2
+                    ]
+                  }
+                }
+              },
+              "example": {
+                "status": 1
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Estatus financeiro do cliente atualizado com sucesso."
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "404": {
+            "$ref": "#/components/responses/ClientNotFounded"
+          },
+          "419": {
+            "$ref": "#/components/responses/AuthenticationTimeout"
+          },
+          "422": {
+            "$ref": "#/components/responses/missingStatusClient"
+          }
+        }
+      }
+    },
+    "/usuario": {
+      "put": {
+        "tags": [
+          "Usuário"
+        ],
+        "summary": "Atualizar usuário",
+        "description": "Atualiza informações de um usuário",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "type": "string",
+                    "description": "Nome do usuário"
+                  },
+                  "email": {
+                    "type": "string",
+                    "format": "email",
+                    "description": "Endereço de email do usuário"
+                  },
+                  "senha": {
+                    "type": "string",
+                    "description": "Senha do usuário"
+                  }
+                },
+                "required": [
+                  "nome",
+                  "email",
+                  "senha"
+                ],
+                "example": {
+                  "nome": "João",
+                  "email": "joao@example.com",
+                  "senha": "senha123"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "jwt": []
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Usuário atualizado"
+          },
+          "400": {
+            "$ref": "#/components/responses/EmailUniqueError"
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "419": {
+            "$ref": "#/components/responses/AuthenticationTimeout"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "jwt": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header",
+        "description": "Para autenticação por JWT, informe um token no formato Bearer [token]."
+      }
+    },
+    "responses": {
+      "Unauthorized": {
+        "description": "Erro de autenticação",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string",
+                  "example": "Para acessar este recurso um token de autenticação válido deve ser enviado."
+                }
+              }
+            }
+          }
+        }
+      },
+      "MissingParametersNameEmailCpfTelefone": {
+        "description": "Parâmetros obrigatórios não informados",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string"
+                },
+                "campos_faltando": {
+                  "type": "object",
+                  "properties": {
+                    "nome": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "cpf": {
+                      "type": "string"
+                    },
+                    "telefone": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "example": {
+                "nome": {
+                  "exemplo": {
+                    "mensagem": "O campo nome é obrigatório"
+                  }
+                },
+                "email": {
+                  "exemplo": {
+                    "mensagem": "O campo email é obrigatório"
+                  }
+                },
+                "cpf": {
+                  "exemplo": {
+                    "mensagem": "O campo cpf é obrigatório"
+                  }
+                },
+                "telefone": {
+                  "exemplo": {
+                    "mensagem": "O campo telefone é obrigatório"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "missingStatusClient": {
+        "description": "Parâmetros obrigatórios não informados",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErroValidacao"
+            },
+            "examples": {
+              "campo_inválido": {
+                "summary": "Permitido valor [1 ,2]",
+                "value": {
+                  "erros": [
+                    {
+                      "campo": "status",
+                      "mensagem": "O campo status deve ter o valor 1 ou 2."
+                    }
+                  ]
+                }
+              },
+              "campo_faltando": {
+                "summary": "Campo obrigatório",
+                "value": {
+                  "erros": [
+                    {
+                      "campo": "status",
+                      "mensagem": "O campo status é obrigatório."
+                    }
+                  ]
+                }
+              },
+              "tipo_incorreto": {
+                "summary": "Campo deve ser um número inteiro",
+                "value": {
+                  "erros": [
+                    {
+                      "campo": "status",
+                      "mensagem": "O campo status deve ser um número inteiro."
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "DuplicidadeEmailCpfTelefone": {
+        "description": "Requisição inválida",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ErroValidacao"
+            },
+            "examples": {
+              "duplicidade_email": {
+                "summary": "Email já cadastrado",
+                "value": {
+                  "erros": [
+                    {
+                      "campo": "email",
+                      "mensagem": "O e-mail informado já está sendo utilizado por outro usuário."
+                    }
+                  ]
+                }
+              },
+              "duplicidade_cpf": {
+                "summary": "CPF já cadastrado",
+                "value": {
+                  "erros": [
+                    {
+                      "campo": "cpf",
+                      "mensagem": "O CPF informado já está sendo utilizado por outro usuário."
+                    }
+                  ]
+                }
+              },
+              "duplicidade_telefone": {
+                "summary": "Telefone já cadastrado",
+                "value": {
+                  "erros": [
+                    {
+                      "campo": "telefone",
+                      "mensagem": "O telefone informado já está sendo utilizado por outro usuário."
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "EmailUniqueError": {
+        "description": "E-mail informado já está cadastrado no sistema",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string",
+                  "example": "Já existe usuário cadastrado com o e-mail informado."
+                }
+              }
+            }
+          }
+        }
+      },
+      "ClientNotFounded": {
+        "description": "Cliente não encontrado para o ID especificado.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string",
+                  "example": "Cliente informado não encontrado."
+                }
+              }
+            }
+          }
+        }
+      },
+      "AuthenticationTimeout": {
+        "description": "Token de autorização expirado.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mensagem": {
+                  "type": "string",
+                  "example": "Autorização expirada."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "NovoCliente": {
+        "type": "object",
+        "properties": {
+          "nome": {
+            "type": "string",
+            "example": "Cliente Teste"
+          },
+          "email": {
+            "type": "string",
+            "example": "teste@teste.com"
+          },
+          "cpf": {
+            "type": "string",
+            "example": "011.111.11-11"
+          },
+          "telefone": {
+            "type": "string",
+            "example": "(31) 11111-1111"
+          },
+          "endereco": {
+            "$ref": "#/components/schemas/Endereco"
+          }
+        },
+        "required": [
+          "nome",
+          "email",
+          "cpf",
+          "telefone"
+        ]
+      },
+      "Endereco": {
+        "type": "object",
+        "properties": {
+          "logradouro": {
+            "type": "string",
+            "example": "Rua Teste, s/n"
+          },
+          "complemento": {
+            "type": "string",
+            "example": ""
+          },
+          "cep": {
+            "type": "string",
+            "example": "32000-000"
+          },
+          "bairro": {
+            "type": "string",
+            "example": "Estaleiro"
+          },
+          "cidade": {
+            "type": "string",
+            "example": "Ponta Grossa"
+          },
+          "estado": {
+            "type": "string",
+            "example": "MG"
+          }
+        }
+      },
+      "ClienteCriado": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "example": 1
+          },
+          "nome": {
+            "type": "string",
+            "example": "Cliente Teste"
+          },
+          "email": {
+            "type": "string",
+            "example": "teste@teste.com"
+          },
+          "cpf": {
+            "type": "string",
+            "example": "011.111.11-11"
+          },
+          "telefone": {
+            "type": "string",
+            "example": "(31) 11111-1111"
+          },
+          "endereco": {
+            "$ref": "#/components/schemas/Endereco"
+          },
+          "status": {
+            "type": "string",
+            "example": "Em Dia"
+          }
+        }
+      },
+      "ErroValidacao": {
+        "type": "object",
+        "properties": {
+          "erros": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ErroCampo"
+            }
+          }
+        }
+      },
+      "ErroCampo": {
+        "type": "object",
+        "properties": {
+          "campo": {
+            "type": "string",
+            "example": "email"
+          },
+          "mensagem": {
+            "type": "string",
+            "example": "Email já cadastrado"
+          }
+        }
+      }
+    }
+  }
+}

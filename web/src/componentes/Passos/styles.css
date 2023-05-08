@@ -1,0 +1,52 @@
+.progresso-vertical {
+  min-height: 100vh;
+  background-color: var(--cinza-claro);
+  min-width: 55%;
+}
+
+.progresso-stepper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 0 60px 0 50px;
+  margin-top: 30%;
+}
+
+.barra-verde {
+  height: 40px;
+  width: 4px;
+  background-color: #0e8750;
+  margin-left: 14px;
+}
+
+.progresso-icones {
+  display: flex;
+  flex-direction: column;
+  margin-right: 24px;
+}
+
+.progresso-step {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.step-titulo {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 130%;
+  color: var(--verde-escuro);
+
+  margin-bottom: 8px;
+}
+.step-dialogo {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 130%;
+
+  color: var(--cinza-escuro);
+}

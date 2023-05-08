@@ -1,0 +1,67 @@
+button {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  text-transform: capitalize;
+  line-height: 25px;
+  width: 160px;
+  height: 33px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  color: var(--cinza);
+
+  padding: 4px 40px;
+  gap: 4px;
+  transition: background 0.4s ease-in-out;
+}
+
+button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.botaoCancelar {
+  color: var(--verde-escuro);
+  background: var(--cinza);
+  border: 1px solid #dedee9;
+}
+
+.botaoCadastro {
+  color: var(--cinza);
+  background: var(--rosa-forte);
+  border: none;
+}
+
+.botaoCadastro:hover {
+  color: var(--rosa-forte);
+  background: var(--cinza);
+  border: 1px solid var(--rosa-forte);
+}
+
+.largo {
+  width: 260px;
+}
+
+.novaCobranca {
+  width: 252px;
+}
+
+.botaoCliente {
+  width: 246px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.botaoCliente::before {
+  content: url("../../assets/icone-editar-cliente.svg");
+
+  width: 18px;
+  height: 20px;
+}

@@ -1,0 +1,23 @@
+.containerProgressoInferior {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 64px;
+}
+
+.containerProgressoInferior div {
+  width: 82px;
+  height: 6px;
+  border-radius: 20px;
+
+  margin-right: 8px;
+}
+
+.barraProgresso {
+  background-color: #dedee9;
+}
+
+.verde {
+  background-color: #0e8750;
+}

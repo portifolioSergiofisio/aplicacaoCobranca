@@ -1,0 +1,71 @@
+.fundoModal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0, 0, 0, 0.7);
+  z-index: 2;
+  top: 0;
+  right: 0;
+}
+
+.modalDetalhes {
+  position: relative;
+  width: 600px;
+  height: 461px;
+
+  background: #ffffff;
+  border-radius: 30px;
+  padding: 40px 50px;
+}
+
+.iconeTitulo {
+  display: flex;
+  align-items: center;
+}
+
+.corpoDetalhes {
+  margin-top: 16px;
+}
+
+.campo {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  color: #3f3f55;
+
+  margin-bottom: 10px;
+}
+
+.informacao {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #3f3f55;
+}
+
+.descricao,
+.vencimentoValor,
+.IdStatus {
+  margin-top: 24px;
+}
+
+.vencimentoValor,
+.IdStatus {
+  display: flex;
+  width: 100%;
+}
+
+.vencimento,
+.IdCobranca {
+  width: 243px;
+}
+
+.descricao {
+  width: 489px;
+  height: 63px;
+}

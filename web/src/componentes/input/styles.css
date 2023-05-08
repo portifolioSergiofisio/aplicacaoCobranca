@@ -1,0 +1,98 @@
+.todoInput {
+  width: 100%;
+}
+
+.divInput {
+  position: relative;
+  display: flex;
+
+  width: 100%;
+
+  background: var(--branco);
+
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+
+  color: var(--preto-azulado);
+}
+
+label {
+  display: flex;
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+
+  color: #344054;
+}
+
+.doisInputs {
+  display: flex;
+  gap: 24px;
+}
+
+.doisInputs > .todoInput:first-of-type {
+  margin-right: 24px;
+}
+
+.divInput input {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+.olho-fechado {
+  height: 10%;
+  width: 10%;
+}
+
+.divInput img {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  transform: translate(-50%);
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.erro {
+  border: 3px solid #e70000;
+}
+
+.correto {
+  border: none;
+}
+
+.emailTabelaCliente {
+  margin-right: 10px;
+}
+
+.mensagem-erro {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 2px;
+  color: #e70000;
+}
+
+.inputGrande {
+  width: 303px;
+}
+.inputPequeno {
+  width: 160px;
+}
+
+.esqueceu {
+  display: flex;
+}

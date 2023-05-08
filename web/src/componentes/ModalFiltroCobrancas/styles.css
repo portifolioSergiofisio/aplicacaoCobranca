@@ -1,0 +1,101 @@
+.modalFiltro {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 210px;
+  right: 260px;
+  background-color: #ffffff0a;
+  z-index: 2;
+
+}
+
+.conteudoModalStatus {
+  width: 330px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--branco);
+  border-radius: 30px;
+  filter: drop-shadow(0px 4px 42px rgba(0, 0, 0, 0.2));
+  padding: 30px;
+}
+
+.selecionarInput {
+  width: 100%;
+  height: 132px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.divStatusRadio span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divData {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 6px;
+
+  width: 264px;
+  height: 70px;
+}
+
+.divData input {
+  width: 260px;
+}
+
+.divBotoesStatus {
+  width: 100%;
+  height: 77px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px;
+
+  margin-top: 16px;
+}
+
+.divBotoesStatus .largoStatus {
+  width: 100%;
+}
+
+.divStatusRadio {
+  display: flex;
+
+  width: 263px;
+  height: 48px;
+
+  background: #f0f0f5;
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+
+.radioStatus {
+  width: 50px;
+  height: 100%;
+  appearance: none;
+}
+
+.statusChecado {
+  background-image: url('../../assets/checkbox-status.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.statusNaoChecado {
+  background-image: url('../../assets/checkbox-status-sinza.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}

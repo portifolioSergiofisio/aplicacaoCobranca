@@ -1,0 +1,187 @@
+.modalConteudoCriarCobranca {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 600px;
+  height: 754px;
+
+  background: #ffffff;
+  border-radius: 30px;
+
+  padding: 51px;
+}
+
+.tituloCadastroCobranca {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 359px;
+  height: 40px;
+
+  margin-bottom: 20px;
+  margin-right: 130px;
+}
+
+.tituloCadastroCobranca > h2 {
+  width: 297px;
+  height: 34px;
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 130%;
+  /* identical to box height, or 34px */
+
+  display: flex;
+  align-items: center;
+
+  /* Cinzas/Cinza 2 */
+
+  color: #3f3f55;
+}
+
+.fomularioCriarCobranca {
+  display: flex;
+  flex-direction: column;
+
+  width: 487px;
+  height: 590px;
+}
+
+.descricaoCadastroCobranca {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 16px;
+  gap: 101px;
+
+  width: 100%;
+  height: 88px;
+
+  background: #ffffff;
+  border-radius: 8px;
+  resize: none;
+}
+
+.texareaCorreto {
+  border: 1px solid #d0d5dd;
+}
+
+.descricaoCadastroCobranca::placeholder {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 10px;
+
+  color: #747488;
+}
+
+.subDivDataValor {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+  gap: 24px;
+}
+
+.divStatus {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+
+  width: 487px;
+  margin-bottom: 130px;
+}
+
+.pagoOuPendente {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 8px;
+
+  width: 487px;
+  height: 48px;
+
+  background: #f0f0f5;
+  border-radius: 10px;
+}
+
+.pagoOuPendente > strong {
+  background: #c8c8d7;
+
+  width: 24px;
+  height: 24px;
+
+  border-radius: 50%;
+}
+
+.botoesCadastroCobranca {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+.largoCobranca {
+  width: 230px;
+}
+
+.inputRadio {
+  display: flex;
+  flex-direction: column;
+}
+
+.divRadio {
+  display: flex;
+  align-items: center;
+
+  width: 487px;
+  height: 48px;
+
+  background: #f0f0f5;
+  border-radius: 10px;
+}
+
+.radio {
+  width: 50px;
+  height: 100%;
+  appearance: none;
+  cursor: pointer;
+}
+
+.checado {
+  background-image: url('../../assets/icone-concluido.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.naoChecado {
+  background-image: url('../../assets/icone-nao-selecionado.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.labelRadio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.separacaoModalCobranca {
+  margin-top: 16px;
+}
+
+.inputRadio > .divRadio:first-of-type {
+  margin-bottom: 8px;
+}
