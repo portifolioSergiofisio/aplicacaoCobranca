@@ -18,8 +18,6 @@ Este repositório contém uma aplicação de cadastro de cobranças que permite 
 
 </u></b>
 
-https://main.d2x8d5awpyqt9n.amplifyapp.com/ - AWS
-
 https://web-cobranca.vercel.app/ - VERCEL
 
 <u><b>
